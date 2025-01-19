@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenadores Premontados</title>
+    <style>
+        /* Estilos generales para el cuerpo */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Estilos del encabezado principal */
+        header {
+            background-color: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 1rem 0 2rem;
+        }
+
+        /* Estilos para la barra de navegación */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2a5298;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: white;
+            color: #2a5298;
+            border-radius: 5px;
+        }
+
+        /* Estilo para el contenido principal */
+        main {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #1e3c72;
+        }
+
+        /* Estilos del filtro */
+        .filtro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .filtro label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .filtro select {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Estilos para las tarjetas de ordenadores premontados */
+        .premontado {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .premontado img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .premontado-content {
+            flex: 1;
+        }
+
+        .premontado h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .premontado p {
+            margin: 0.5rem 0;
+        }
+
+        .premontado .precio {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #007b00;
+            margin-top: 1rem;
+        }
+
+        .premontado .calificacion {
+            margin: 0.5rem 0;
+            color: #f39c12;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #007b00;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: #005f00;
+        }
+
+        /* Estilos del pie de página */
+        footer {
+            background-color: #2a5298;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+    <script>
+        /**
+         * Función para filtrar los ordenadores premontados según la categoría que queramos.
+         */
+        function filtrarPorCategoria() {
+            // Obtiene el valor seleccionado en el filtro (Gaming, Oficina, Workstation o Todos)
+            const categoria = document.getElementById("categoria").value;
+
+            // Selecciona todas las secciones que representan los ordenadores premontados
+            const premontados = document.querySelectorAll(".premontado");
+
+            // Itera sobre cada ordenador premontado para mostrarlo u ocultarlo según su categoría
+            premontados.forEach(premontado => {
+                // Si la categoría seleccionada es "todos" o coincide con el atributo data-categoria, se muestra
+                if (categoria === "todos" || premontado.dataset.categoria === categoria) {
+                    premontado.style.display = "flex"; // Muestra el ordenador
+                } else {
+                    premontado.style.display = "none"; // Oculta el ordenador
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        <h1>Ordenadores Premontados</h1>
+        <p>Elige el equipo que mejor se adapte a tus necesidades</p>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="componentes.html">Componentes</a>
+        <a href="premontados.html">Ordenadores Premontados</a>
+        <a href="quienes-somos.html">Quiénes Somos</a>
+        <a href="mapaweb.html">Mapa Web</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <h2>Elige uno de nuestros ordenadores premontados</h2>
+
+        <!-- Filtro para seleccionar la categoría -->
+        <div class="filtro">
+            <label for="categoria">Filtrar por categoría:</label>
+            <!-- Al cambiar el valor del select, se ejecuta la función filtrarPorCategoria -->
+            <select id="categoria" onchange="filtrarPorCategoria()">
+                <option value="todos">Todos</option>
+                <option value="gaming">Gaming</option>
+                <option value="oficina">Oficina</option>
+                <option value="workstation">Workstation</option>
+            </select>
+        </div>
+
+        <!-- Ordenador premontado categoría Gaming -->
+        <section class="premontado" data-categoria="gaming">
+            <img src="imagenes/gamer.jpg" alt="Gamer">
+            <div class="premontado-content">
+                <h3>Gamer Pro</h3>
+                <p>Equipo diseñado para gaming de alto rendimiento.</p>
+                <p><strong>Procesador:</strong> Intel Core i7</p>
+                <p><strong>GPU:</strong> NVIDIA RTX 4060</p>
+                <p class="precio">1.299,99 €</p>
+                <p class="calificacion">⭐⭐⭐⭐☆</p>
+            </div>
+        </section>
+
+        <!-- Ordenador premontado categoría Workstation -->
+        <section class="premontado" data-categoria="workstation">
+            <img src="imagenes/workstation-pro.jpg" alt="Ultra Gamer">
+            <div class="premontado-content">
+                <h3>Workstation Pro</h3>
+                <p>Ideal para tareas pesadas como edición de video y diseño 3D.</p>
+                <p><strong>Procesador:</strong> AMD Ryzen 9</p>
+                <p><strong>GPU:</strong> AMD Radeon RX 6800 XT</p>
+                <p class="precio">1.899,99 €</p>
+                <p class="calificacion">⭐⭐⭐⭐⭐</p>
+            </div>
+        </section>
+
+        <!-- Ordenador premontado categoría Oficina -->
+        <section class="premontado" data-categoria="oficina">
+            <img src="imagenes/basic-office.jpg" alt="Ofimática">
+            <div class="premontado-content">
+                <h3>Basic Office</h3>
+                <p>Perfecto para tareas de oficina y estudios básicos.</p>
+                <p><strong>Procesador:</strong> Intel Core i3</p>
+                <p><strong>GPU:</strong> Gráficos integrados</p>
+                <p class="precio">499,99 €</p>
+                <p class="calificacion">⭐⭐⭐☆☆</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Tienda de Componentes Orozco. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 para soportar caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Asegura que la página sea responsiva en dispositivos móviles -->
+    <title>Componentes - Configurador</title> <!-- Título de la página -->
+    <style>
+        /* Estilos globales */
+        body {
+            font-family: 'Arial', sans-serif; /* Fuente predeterminada */
+            margin: 0; /* Elimina márgenes predeterminados */
+            padding: 0; /* Elimina relleno predeterminado */
+            background-color: #f9f9f9; /* Color de fondo claro */
+            color: #333; /* Color del texto principal */
+        }
+
+        /* Estilo del encabezado */
+        header {
+            background: linear-gradient(to right, #1e3c72, #2a5298); /* Gradiente de fondo azul */
+            color: white; /* Texto en blanco */
+            text-align: center; /* Centra el contenido del encabezado */
+            padding: 4rem 1rem; /* Espaciado alrededor del contenido */
+        }
+
+        header h1 {
+            font-size: 3rem; /* Tamaño grande del título */
+            margin: 0; /* Elimina márgenes adicionales */
+            font-weight: bold; /* Texto en negrita */
+        }
+
+        header p {
+            font-size: 1.2rem; /* Texto descriptivo */
+            margin: 1rem 0 2rem; /* Espaciado superior e inferior */
+        }
+
+        /* Barra de navegación */
+        nav {
+            display: flex; /* Establece diseño flexible en fila */
+            justify-content: center; /* Centra los elementos horizontalmente */
+            background-color: #2a5298; /* Fondo azul */
+            padding: 1rem 0; /* Espaciado interno vertical */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+        }
+
+        nav a {
+            color: white; /* Color de texto blanco */
+            text-decoration: none; /* Sin subrayado */
+            margin: 0 1.5rem; /* Espaciado entre los enlaces */
+            font-size: 1.2rem; /* Tamaño de letra */
+            font-weight: bold; /* Texto en negrita */
+            padding: 0.5rem 1rem; /* Espaciado interno */
+            transition: background 0.3s, color 0.3s; /* Transición para efectos hover */
+        }
+
+        nav a:hover {
+            background-color: white; /* Fondo blanco en hover */
+            color: #2a5298; /* Color de texto azul en hover */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+
+        /* Estilos del contenido principal */
+        main {
+            padding: 2rem 1rem; /* Espaciado interno */
+            max-width: 1200px; /* Ancho máximo del contenido */
+            margin: 0 auto; /* Centra el contenido */
+        }
+
+        /* Secciones dentro del contenido principal */
+        section {
+            margin: 2rem 0; /* Espaciado entre secciones */
+        }
+
+        .section-title {
+            font-size: 2rem; /* Tamaño de título de sección */
+            color: #1e3c72; /* Color de texto azul */
+            text-align: center; /* Centrado */
+            margin-bottom: 1rem; /* Espaciado inferior */
+        }
+
+        /* Etiquetas y campos de selección del formulario */
+        label {
+            display: block; /* Cada etiqueta ocupa una línea completa */
+            margin: 1rem 0 0.5rem; /* Espaciado alrededor de la etiqueta */
+            font-weight: bold; /* Texto en negrita */
+            color: #333; /* Color del texto */
+        }
+
+        select {
+            width: 100%; /* Ocupa todo el ancho disponible */
+            padding: 0.5rem; /* Espaciado interno */
+            font-size: 1rem; /* Tamaño de texto */
+            margin-bottom: 1rem; /* Espaciado inferior */
+            border-radius: 5px; /* Bordes redondeados */
+            border: 1px solid #ccc; /* Borde gris claro */
+        }
+
+        select:focus {
+            outline: none; /* Elimina el contorno predeterminado */
+            border-color: #2a5298; /* Cambia el color del borde al azul al enfocar */
+        }
+
+        /* Estilos del pie de página */
+        footer {
+            background-color: #2a5298; /* Fondo azul oscuro */
+            color: white; /* Texto en blanco */
+            text-align: center; /* Centra el texto */
+            padding: 1rem 0; /* Espaciado vertical */
+            margin-top: 2rem; /* Separación superior */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Configurador de Componentes</h1> <!-- Título principal -->
+        <p>Configura tu equipo con los mejores componentes</p> <!-- Descripción del encabezado -->
+    </header>
+
+    <nav> <!-- Barra de navegación -->
+        <a href="index.html">Inicio</a>
+        <a href="componentes.html">Componentes</a>
+        <a href="premontados.html">Ordenadores Premontados</a>
+        <a href="quienes-somos.html">Quiénes Somos</a>
+        <a href="mapaweb.html">Mapa Web</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2 class="section-title">Selecciona los componentes de tu ordenador</h2>
+            <form>
+                <!-- Campo para seleccionar procesador -->
+                <label for="procesador">Procesador</label>
+                <select id="procesador">
+                    <option value="intel-i5">Intel Core i5</option>
+                    <option value="intel-i7">Intel Core i7</option>
+                    <option value="intel-i9">Intel Core i9</option>
+                    <option value="amd-ryzen-5">AMD Ryzen 5</option>
+                    <option value="amd-ryzen-7">AMD Ryzen 7</option>
+                    <option value="amd-ryzen-9">AMD Ryzen 9</option>
+                </select>
+
+                <!-- Campo para seleccionar placa base -->
+                <label for="placa-base">Placa Base</label>
+                <select id="placa-base">
+                    <option value="intel-z690">Z690 para Intel</option>
+                    <option value="intel-b660">B660 para Intel</option>
+                    <option value="amd-b550">B550 para AMD</option>
+                    <option value="amd-x570">X570 para AMD</option>
+                </select>
+
+                <!-- Campo para seleccionar tarjeta gráfica -->
+                <label for="gpu">Tarjeta Gráfica</label>
+                <select id="gpu">
+                    <option value="nvidia-rtx-3060">NVIDIA RTX 4060</option>
+                    <option value="nvidia-rtx-3070">NVIDIA RTX 4070</option>
+                    <option value="nvidia-rtx-3080">NVIDIA RTX 4080</option>
+                    <option value="amd-rx-6700">AMD Radeon RX 6700 XT</option>
+                    <option value="amd-rx-6800">AMD Radeon RX 6800 XT</option>
+                </select>
+
+                <!-- Campo para seleccionar memoria RAM -->
+                <label for="ram">Memoria RAM</label>
+                <select id="ram">
+                    <option value="16gb-ddr4">16GB DDR4</option>
+                    <option value="32gb-ddr4">32GB DDR4</option>
+                    <option value="16gb-ddr5">16GB DDR5</option>
+                    <option value="32gb-ddr5">32GB DDR5</option>
+                </select>
+
+                <!-- Campo para seleccionar almacenamiento -->
+                <label for="almacenamiento">Almacenamiento</label>
+                <select id="almacenamiento">
+                    <option value="ssd-500gb">SSD 500GB</option>
+                    <option value="ssd-1tb">SSD 1TB</option>
+                    <option value="hdd-1tb">HDD 1TB</option>
+                    <option value="hdd-2tb">HDD 2TB</option>
+                </select>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tienda de Componentes Orozco.</p> <!-- Información del pie de página -->
+    </footer>
+</body>
+</html>

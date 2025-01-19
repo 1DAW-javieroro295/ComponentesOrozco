@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Componentes Orozco</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 1rem 0 2rem;
+        }
+
+        header a {
+            background-color: #f9f9f9;
+            color: #1e3c72;
+            padding: 0.75rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header a:hover {
+            background-color: #1e3c72;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2a5298;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: white;
+            color: #2a5298;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #1e3c72;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .card-content {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .card h3 {
+            margin: 0.5rem 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 1rem;
+            margin: 0.5rem 0 1rem;
+        }
+
+        .card a {
+            display: inline-block;
+            background-color: #1e3c72;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .card a:hover {
+            background-color: #163d61;
+        }
+
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .benefit-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            flex: 1 1 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-item h4 {
+            color: #1e3c72;
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            background-color: #2a5298;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Componentes Orozco</h1>
+        <p>Tu tienda de confianza para componentes y equipos premontados.</p>
+        <a href="premontados.html">Explorar ahora</a>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="componentes.html">Componentes</a>
+        <a href="premontados.html">Ordenadores Premontados</a>
+        <a href="quienes-somos.html">Quiénes Somos</a>
+        <a href="mapaweb.html">Mapa Web</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2 class="section-title">Nuestros productos destacados</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="imagenes/gamer.jpg" alt="Gamer Pro">
+                    <div class="card-content">
+                        <h3>Ordenador Gamer</h3>
+                        <p>Equipo diseñado para gaming de alto rendimiento.</p>
+                        <a href="premontados.html">Ver más</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagenes/workstation-pro.jpg" alt="Workstation Pro">
+                    <div class="card-content">
+                        <h3>Ordenador 3D</h3>
+                        <p>Para tareas pesadas como edición de video.</p>
+                        <a href="premontados.html">Ver más</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagenes/basic-office.jpg" alt="Office PC">
+                    <div class="card-content">
+                        <h3>Ordenador de Oficina</h3>
+                        <p>Para tareas de oficina y estudios básicos.</p>
+                        <a href="premontados.html">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">¿Por qué elegirnos?</h2>
+            <div class="benefits">
+                <div class="benefit-item">
+                    <h4>Precios Competitivos</h4>
+                    <p>Los mejores precios del mercado en cada categoría.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Garantía de Calidad</h4>
+                    <p>Productos 100% garantizados y certificados.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Envíos Rápidos</h4>
+                    <p>Entregas seguras y rápidas en todo el país.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Componentes Orozco.</p>
+    </footer>
+</body>
+</html>
